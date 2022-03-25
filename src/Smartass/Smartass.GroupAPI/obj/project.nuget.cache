@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wAydi8G3G41CJhRKZ7daBebiX7NJtx9wzbdSZmLS+VTod9vSUtRUSBC/62VMmw7NsXe1lzpxKgAJueGhr5wVQg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sivkovic\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sivkovic\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}
