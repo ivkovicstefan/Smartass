@@ -1,0 +1,6 @@
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DB\bin\Debug\Smartass.Group.DB.dacpac
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DB\bin\Debug\Smartass.Group.DB.dll
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DB\bin\Debug\Smartass.Group.DB.pdb
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DB\obj\Debug\Smartass.Group.DB.sqlproj.AssemblyReference.cache
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DB\obj\Debug\Smartass.Group.DB.dll
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DB\obj\Debug\Smartass.Group.DB.pdb
