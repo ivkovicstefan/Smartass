@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Smartass.Group.API</AssemblyName>
+    <RootNamespace>Smartass.Group.API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smartass.Group.BLL\Smartass.Group.BLL.csproj" />
+    <ProjectReference Include="..\Smartass.Group.DAL\Smartass.Group.DAL.csproj" />
+  </ItemGroup>
+
+
+</Project>

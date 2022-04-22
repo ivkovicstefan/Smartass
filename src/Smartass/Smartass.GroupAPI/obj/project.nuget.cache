@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1ptA2R9qayt9KDissyj1GAz3Oip7vhu/AFwZGnNMp44dhRVsU/e6V4SsR9NOV470pRkxzR7juK45LcQN5rYXow==",
+  "dgSpecHash": "3K3tTWoaSrnVQi3gPZNOje9iZFC2GO/+oQDDUPIntbA/hk602SCGIHS0XJWWSvBE/pSeIfd4OeFY4UIWMigOrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
+  "projectFilePath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.Group.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
