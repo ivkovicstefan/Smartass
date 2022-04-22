@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
-        "projectName": "Smartass.GroupAPI",
+        "projectName": "Smartass.Group.API",
         "projectPath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
         "packagesPath": "C:\\Users\\ThinkPad x260\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\obj\\",

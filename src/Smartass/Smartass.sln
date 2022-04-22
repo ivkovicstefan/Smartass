@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartass.GroupAPI", "Smartass.GroupAPI\Smartass.GroupAPI.csproj", "{B5112294-5864-49F1-8CB4-84424D9D21BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smartass.Group.API", "Smartass.GroupAPI\Smartass.Group.API.csproj", "{B5112294-5864-49F1-8CB4-84424D9D21BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartass.Group.BLL", "Smartass.Group.BLL\Smartass.Group.BLL.csproj", "{E2E483C2-1055-401D-8F7E-1B6467BADAA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartass.Group.DAL", "Smartass.Group.DAL\Smartass.Group.DAL.csproj", "{AE4F5D37-5161-425F-9CE5-F23518A2C491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B5112294-5864-49F1-8CB4-84424D9D21BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5112294-5864-49F1-8CB4-84424D9D21BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5112294-5864-49F1-8CB4-84424D9D21BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E483C2-1055-401D-8F7E-1B6467BADAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E483C2-1055-401D-8F7E-1B6467BADAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E483C2-1055-401D-8F7E-1B6467BADAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E483C2-1055-401D-8F7E-1B6467BADAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4F5D37-5161-425F-9CE5-F23518A2C491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4F5D37-5161-425F-9CE5-F23518A2C491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4F5D37-5161-425F-9CE5-F23518A2C491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4F5D37-5161-425F-9CE5-F23518A2C491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

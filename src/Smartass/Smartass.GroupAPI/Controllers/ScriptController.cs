@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Smartass.Group.BLL.Contract;
 
-namespace Smartass.GroupAPI.Controllers
+namespace Smartass.Group.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -13,12 +9,14 @@ namespace Smartass.GroupAPI.Controllers
     {
         #region Private Fields
 
+        private readonly IScriptLogic _scriptLogic;
+
         #endregion
 
         #region Constructor
-        public ScriptController()
+        public ScriptController(IScriptLogic scriptLogic)
         {
-
+            _scriptLogic = scriptLogic;
         }
 
         #endregion
