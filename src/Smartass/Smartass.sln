@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smartass.Group.DAL", "Smart
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Smartass.Group.DB", "Smartass.Group.DB\Smartass.Group.DB.sqlproj", "{7D1251EB-119D-4B16-8301-166607FFA693}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartass.Core.Utility", "Smartass.Core\Smartass.Core.Utility.csproj", "{ECF77E1F-5546-4199-8263-1A19379924CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartass.Core.Model", "Smartass.Model\Smartass.Core.Model.csproj", "{8D1D320A-6BF2-46D7-98F8-1C9913DBEEDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{7D1251EB-119D-4B16-8301-166607FFA693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D1251EB-119D-4B16-8301-166607FFA693}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D1251EB-119D-4B16-8301-166607FFA693}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{ECF77E1F-5546-4199-8263-1A19379924CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF77E1F-5546-4199-8263-1A19379924CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF77E1F-5546-4199-8263-1A19379924CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF77E1F-5546-4199-8263-1A19379924CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1D320A-6BF2-46D7-98F8-1C9913DBEEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1D320A-6BF2-46D7-98F8-1C9913DBEEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1D320A-6BF2-46D7-98F8-1C9913DBEEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1D320A-6BF2-46D7-98F8-1C9913DBEEDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
