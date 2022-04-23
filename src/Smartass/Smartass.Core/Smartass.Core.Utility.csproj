@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Smartass.Core.Utility</AssemblyName>
+    <RootNamespace>Smartass.Core.Utility</RootNamespace>
+  </PropertyGroup>
+
+</Project>
