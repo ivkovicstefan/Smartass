@@ -7,3 +7,4 @@ C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DAL\obj
 C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DAL\obj\Debug\netcoreapp3.1\Smartass.Group.DAL.csproj.CoreCompileInputs.cache
 C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DAL\obj\Debug\netcoreapp3.1\Smartass.Group.DAL.dll
 C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DAL\obj\Debug\netcoreapp3.1\Smartass.Group.DAL.pdb
+C:\Users\ThinkPad x260\source\repos\Smartass\src\Smartass\Smartass.Group.DAL\obj\Debug\netcoreapp3.1\Smartass.Group.DAL.csproj.AssemblyReference.cache
