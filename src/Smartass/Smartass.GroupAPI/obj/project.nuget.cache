@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wAydi8G3G41CJhRKZ7daBebiX7NJtx9wzbdSZmLS+VTod9vSUtRUSBC/62VMmw7NsXe1lzpxKgAJueGhr5wVQg==",
+  "dgSpecHash": "3K3tTWoaSrnVQi3gPZNOje9iZFC2GO/+oQDDUPIntbA/hk602SCGIHS0XJWWSvBE/pSeIfd4OeFY4UIWMigOrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sivkovic\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\sivkovic\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.Group.API.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

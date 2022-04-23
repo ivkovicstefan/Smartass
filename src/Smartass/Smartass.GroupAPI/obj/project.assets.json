@@ -1,31 +1,70 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Smartass.Group.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Smartass.Group.DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Smartass.Group.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Smartass.Group.BLL.dll": {}
+        }
+      },
+      "Smartass.Group.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Smartass.Group.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Smartass.Group.DAL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Smartass.Group.BLL/1.0.0": {
+      "type": "project",
+      "path": "../Smartass.Group.BLL/Smartass.Group.BLL.csproj",
+      "msbuildProject": "../Smartass.Group.BLL/Smartass.Group.BLL.csproj"
+    },
+    "Smartass.Group.DAL/1.0.0": {
+      "type": "project",
+      "path": "../Smartass.Group.DAL/Smartass.Group.DAL.csproj",
+      "msbuildProject": "../Smartass.Group.DAL/Smartass.Group.DAL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Smartass.Group.BLL >= 1.0.0",
+      "Smartass.Group.DAL >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\sivkovic\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\ThinkPad x260\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sivkovic\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
-      "projectName": "Smartass.GroupAPI",
-      "projectPath": "C:\\Users\\sivkovic\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.GroupAPI.csproj",
-      "packagesPath": "C:\\Users\\sivkovic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sivkovic\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\obj\\",
+      "projectUniqueName": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.Group.API.csproj",
+      "projectName": "Smartass.Group.API",
+      "projectPath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\Smartass.Group.API.csproj",
+      "packagesPath": "C:\\Users\\ThinkPad x260\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.GroupAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sivkovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ThinkPad x260\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -37,7 +76,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.Group.BLL\\Smartass.Group.BLL.csproj": {
+              "projectPath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.Group.BLL\\Smartass.Group.BLL.csproj"
+            },
+            "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.Group.DAL\\Smartass.Group.DAL.csproj": {
+              "projectPath": "C:\\Users\\ThinkPad x260\\source\\repos\\Smartass\\src\\Smartass\\Smartass.Group.DAL\\Smartass.Group.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -59,12 +105,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.13, 3.1.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -73,7 +113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }
