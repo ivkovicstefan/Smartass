@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="9a2b259d-510e-477b-980c-b26af1b796f3" ChangeDateTime="04/22/2022 15:14:25">
+    <Property Name="ElementName" Value="[dbo].[Group].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GroupId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8dadbb5d-faaa-4428-ac55-341b417b52a0" ChangeDateTime="04/22/2022 15:24:59">
+    <Property Name="ElementName" Value="[dbo].[UserGroup].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserGroup]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserGroupId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f8d26783-60c3-4ed5-b6bb-1c6ff97eff1b" ChangeDateTime="04/22/2022 15:41:11">
+    <Property Name="ElementName" Value="[dbo].[Section].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Section]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SectionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c4b37da0-3a83-43e7-ba88-ce7b6ec107f4" ChangeDateTime="04/22/2022 15:49:16">
+    <Property Name="ElementName" Value="[GRP].[Script].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[Script]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ScriptId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b0d0f522-ff24-4afd-aa78-3922176b6559" ChangeDateTime="04/22/2022 16:53:21">
+    <Property Name="ElementName" Value="[USR].[User].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[USR].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5f1fac75-87b7-46f8-9d14-7261083129e1" ChangeDateTime="04/22/2022 17:00:28">
+    <Property Name="ElementName" Value="[GRP].[GroupInvite].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[GroupInvite]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GroupInviteId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9c502a1f-4721-430d-9590-47b95c03784a" ChangeDateTime="04/22/2022 17:04:57">
+    <Property Name="ElementName" Value="[GRP].[GroupRequest].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[GroupRequest]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GroupRequestId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9dd87671-f9d3-4fd2-ba44-b00b3b6f3ff7" ChangeDateTime="04/22/2022 17:10:19">
+    <Property Name="ElementName" Value="[GRP].[Post].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[Post]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PostId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d9f38f14-6aeb-4a9b-ac20-b4853d3c3a3b" ChangeDateTime="04/22/2022 17:12:05">
+    <Property Name="ElementName" Value="[GRP].[Post].[PostTest]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[Post]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PostText" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0b3d7b84-b367-48f9-a09c-726d4c91b5e3" ChangeDateTime="04/22/2022 17:13:20">
+    <Property Name="ElementName" Value="[dbo].[PostType].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PostType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PostTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3f10fdd4-13bf-419a-803e-3d31c0df9193" ChangeDateTime="04/22/2022 17:16:38">
+    <Property Name="ElementName" Value="[GRP].[PostImage].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[PostImage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PostImageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="45240252-7183-4059-a872-6ccc39a89301" ChangeDateTime="04/22/2022 17:42:55">
+    <Property Name="ElementName" Value="[dbo].[Image].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Image]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2b804c08-cf29-4115-ac49-ad13fe2cba59" ChangeDateTime="04/22/2022 17:43:55">
+    <Property Name="ElementName" Value="[GRP].[PostImage].[ImageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[PostImage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageFile" />
+  </Operation>
+</Operations>

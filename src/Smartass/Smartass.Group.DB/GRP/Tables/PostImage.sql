@@ -1,0 +1,9 @@
+﻿CREATE TABLE [GRP].[PostImage]
+(
+	[PostImageId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [PostId] INT NOT NULL, 
+    [ImageFile] VARBINARY(MAX) NOT NULL, 
+    [ImageFileType] VARCHAR(10) NOT NULL, 
+    [CreatedDateUTC] DATETIME NOT NULL DEFAULT GETUTCDATE(), 
+    CONSTRAINT [FK_PostImage_Post] FOREIGN KEY ([PostId]) REFERENCES [GRP].[Post]([PostId])
+)
