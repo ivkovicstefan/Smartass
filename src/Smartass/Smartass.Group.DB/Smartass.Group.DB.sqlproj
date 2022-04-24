@@ -80,6 +80,7 @@
     <Build Include="GRP\Tables\Post.sql" />
     <Build Include="GRP\Tables\PostType.sql" />
     <Build Include="GRP\Tables\PostImage.sql" />
+    <Build Include="GRP\Stored Procedures\USP_Group_Create.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Smartass.Group.DB.refactorlog" />
