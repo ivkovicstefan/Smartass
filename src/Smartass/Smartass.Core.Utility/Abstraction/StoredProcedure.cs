@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Smartass.Core.Model.Dictionary;
+using System.Text;
+
 using Smartass.Core.Model.DTO.Common;
 
-namespace Smartass.Core.Model.Common
+namespace Smartass.Core.Utility.Abstraction
 {
     /// <summary>
     /// Represents an abstraction of the SQL Server stored procedure execution
@@ -30,9 +31,9 @@ namespace Smartass.Core.Model.Common
         /// <param name="inputParameters">List of input parameters for the stored procedure</param>
         /// <param name="outputParameters">List of output parameters for the stored procedure</param>
         /// <param name="connectionString">Use <see cref="DatabaseConnectionStringDictionary">DatabaseConnectionStringDictionary</see> as an argument value</param>
-        public StoredProcedure(string storedProcedureName, 
-                               List<SqlParameter> inputParameters, 
-                               List<SqlParameter> outputParameters, 
+        public StoredProcedure(string storedProcedureName,
+                               List<SqlParameter> inputParameters,
+                               List<SqlParameter> outputParameters,
                                string connectionString)
         {
             _storedProcedureName = storedProcedureName;
@@ -78,7 +79,7 @@ namespace Smartass.Core.Model.Common
                         DataSet dataSet = new DataSet();
                         sqlDataAdapter.Fill(dataSet);
                         sqlConnection.Close();
-                        
+
                         foreach (DataTable table in dataSet.Tables)
                         {
                             result.DataTables.Add(table);
@@ -86,12 +87,12 @@ namespace Smartass.Core.Model.Common
 
                         foreach (SqlParameter parameter in sqlCommand.Parameters)
                         {
-                            if(parameter.Direction == ParameterDirection.Output)
+                            if (parameter.Direction == ParameterDirection.Output)
                             {
                                 result.OutputParameters.Add(parameter);
                             }
 
-                            if (parameter.ParameterName == "IsSuccessful")
+                            if (parameter.ParameterName == "@IsSuccessful")
                             {
                                 result.IsSuccessful = Convert.ToBoolean(parameter.Value);
                             }
@@ -148,12 +149,12 @@ namespace Smartass.Core.Model.Common
                                 result.OutputParameters.Add(parameter);
                             }
 
-                            if (parameter.ParameterName == "IsSuccessful")
+                            if (parameter.ParameterName == "@IsSuccessful")
                             {
                                 result.IsSuccessful = Convert.ToBoolean(parameter.Value);
                             }
 
-                            if (parameter.ParameterName == "ResponseText")
+                            if (parameter.ParameterName == "@ResponseText")
                             {
                                 result.ResponseText = parameter.Value.ToString();
                             }

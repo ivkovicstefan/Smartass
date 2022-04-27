@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Smartass.Core.Model\Smartass.Core.Model.csproj" />
+    <ProjectReference Include="..\Smartass.Core.Utility\Smartass.Core.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

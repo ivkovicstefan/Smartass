@@ -15,6 +15,7 @@ namespace Smartass.Core.Model.DTO.Common
         public StoredProcedureResponseDTO()
         {
             IsSuccessful = false;
+            OutputParameters = new List<SqlParameter>();
         }
     }
 }
