@@ -16,6 +16,7 @@ namespace Smartass.Core.Model.DTO.Common
         {
             IsSuccessful = false;
             OutputParameters = new List<SqlParameter>();
+            DataTables = new List<DataTable>();
         }
     }
 }

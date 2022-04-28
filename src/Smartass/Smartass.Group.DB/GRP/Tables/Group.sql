@@ -5,7 +5,7 @@
     [GroupDescription] NVARCHAR(400) NULL, 
     [IsActive] BIT NOT NULL, 
     [IsDeleted] BIT NOT NULL, 
-    [ProfileImageId] INT NULL, 
+    [ProfileImage] VARBINARY(MAX) NULL, 
     [CreatedByUserId] INT NOT NULL , 
     [LastModifiedByUserId] INT NULL, 
     [CreatedDateUTC] DATETIME NOT NULL DEFAULT GETUTCDATE(), 

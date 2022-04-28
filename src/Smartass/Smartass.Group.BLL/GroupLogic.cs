@@ -72,6 +72,35 @@ namespace Smartass.Group.BLL
             return result;
         }
 
+        public ResponseDTO GetGroupListByUser(int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupDataAcess.GetGroupListByUser(userId);
+
+                if(result.IsSuccessful)
+                {
+                    result.ResponseCode = (int)HttpStatusCode.OK;
+                    result.ResponseText = String.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupListGetError,
+                    ResponseCode = (int)HttpStatusCode.InternalServerError
+                };
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
         #endregion
     }
 }

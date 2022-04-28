@@ -6,5 +6,7 @@ namespace Smartass.Group.BLL.Contract
     public interface IGroupLogic
     {
         ResponseDTO CreateGroup(GroupCreationDTO groupCreationDTO);
+
+        ResponseDTO GetGroupListByUser(int userId);
     }
 }

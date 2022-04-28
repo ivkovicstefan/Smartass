@@ -44,7 +44,7 @@ namespace Smartass.Group.API.Controllers
             {
                 result = _groupLogic.CreateGroup(groupCreationDTO);
 
-                switch(result.ResponseCode)
+                switch (result.ResponseCode)
                 {
                     case (int)HttpStatusCode.OK:
                         return Ok(result);
@@ -60,8 +60,34 @@ namespace Smartass.Group.API.Controllers
                 result = new ResponseDTO();
                 return StatusCode((int)HttpStatusCode.InternalServerError, result);
                 //TO-DO: Implement Errorlog
-                throw;
             }
+        }
+
+        [HttpGet]
+        [Route("GetGroupListByUser/{userId:int}")]
+        public IActionResult GetGroupListByUser(int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupLogic.GetGroupListByUser(userId);
+
+                switch(result.ResponseCode)
+                {
+                    case (int)HttpStatusCode.OK:
+                        return Ok(result);
+                    default:
+                        return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO();
+                return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                //TO-DO: Implement Errorlog
+            }
+
         }
 
         #endregion

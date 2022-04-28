@@ -6,5 +6,6 @@ namespace Smartass.Group.DAL.Contract
     public interface IGroupDataAccess
     {
         ResponseDTO CreateGroup(GroupCreationDTO groupCreationDTO);
+        ResponseDTO GetGroupListByUser(int userId);
     }
 }

@@ -32,9 +32,9 @@ namespace Smartass.Core.Utility.Abstraction
         /// <param name="outputParameters">List of output parameters for the stored procedure</param>
         /// <param name="connectionString">Use <see cref="DatabaseConnectionStringDictionary">DatabaseConnectionStringDictionary</see> as an argument value</param>
         public StoredProcedure(string storedProcedureName,
+                               string connectionString,
                                List<SqlParameter> inputParameters,
-                               List<SqlParameter> outputParameters,
-                               string connectionString)
+                               List<SqlParameter> outputParameters = null)
         {
             _storedProcedureName = storedProcedureName;
             _inputParameters = (inputParameters != null) ? inputParameters : new List<SqlParameter>();

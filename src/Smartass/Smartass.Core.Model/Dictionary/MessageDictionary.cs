@@ -11,6 +11,7 @@ namespace Smartass.Core.Model.Dictionary
         public static string UnexpectedError = "An unexpected error occurred. Please try again or contact support.";
 
         public static string GroupCreationError = "An error occurred while creating group. Please try again.";
+        public static string GroupListGetError = "Unable to display list of groups. Try again.";
 
         #endregion
     }
