@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Smartass/Smartass.Core.Model/bin/Debug/netcoreapp3.1
+/src/Smartass/Smartass.Core.Model/obj/Debug/netcoreapp3.1
+/src/Smartass/Smartass.Core.Model/obj
+/src/Smartass/Smartass.Core.Utility/bin/Debug/netcoreapp3.1
+/src/Smartass/Smartass.Core.Utility/obj
+/src/Smartass/Smartass.Group.API/bin/Debug/netcoreapp3.1
+/src/Smartass/Smartass.Group.API/obj
+/src/Smartass/Smartass.Group.BLL/bin/Debug/netcoreapp3.1
+/src/Smartass/Smartass.Group.BLL/obj
+/src/Smartass/Smartass.Group.DAL/bin/Debug/netcoreapp3.1
+/src/Smartass/Smartass.Group.DAL/obj
+/src/Smartass/Smartass.Group.DB/bin/Debug
+/src/Smartass/Smartass.Group.DB/obj/Debug
+/src/Smartass/Smartass.Group.DB/Smartass.Group.DB.dbmdl
+/src/Smartass/Smartass.Group.DB/Smartass.Group.DB.jfm
+/sh.exe.stackdump
+/src/Smartass/.vs/Smartass
+/src/Smartass/Smartass.Core.Model/Smartass.Core.Model.csproj.user
