@@ -131,6 +131,40 @@ namespace Smartass.Group.BLL
             return result;
         }
 
+        public ResponseDTO SendGroupInvite(GroupInvitationDTO groupInvitationDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupDataAcess.SendGroupInvite(groupInvitationDTO);
+
+                if (result.IsSuccessful)
+                {
+                    result.ResponseCode = (int)HttpStatusCode.OK;
+                }
+                else
+                {
+                    result.ResponseCode = (int)HttpStatusCode.BadRequest;
+                    result.ResponseText = String.Empty;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupCreationError
+                };
+
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
         #endregion
     }
 }

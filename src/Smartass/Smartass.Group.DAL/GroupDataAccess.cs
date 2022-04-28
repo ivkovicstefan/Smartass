@@ -181,6 +181,55 @@ namespace Smartass.Group.DAL
             return result;
         }
 
+        public ResponseDTO SendGroupInvite(GroupInvitationDTO groupInvitationDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                List<SqlParameter> inputParams = new List<SqlParameter>()
+                {
+                    new SqlParameter() { ParameterName = "@GroupIdFrom", SqlDbType = SqlDbType.Int, Value=groupInvitationDTO.GroupIdFrom },
+                    new SqlParameter() { ParameterName = "@UserIdFrom", SqlDbType = SqlDbType.Int, Value=groupInvitationDTO.UserIdFrom },
+                    new SqlParameter() { ParameterName = "@UserIdTo", SqlDbType = SqlDbType.Int, Value=groupInvitationDTO.UserIdTo }
+                };
+
+                List<SqlParameter> outputParams = new List<SqlParameter>()
+                {
+                    new SqlParameter() { ParameterName = "@IsSuccessful", SqlDbType = SqlDbType.Bit },
+                    new SqlParameter() { ParameterName = "@ResponseText", SqlDbType = SqlDbType.VarChar, Size = 100 }
+                };
+
+                StoredProcedure storedProcedure = new StoredProcedure(StoredProcedureDictionary.UspGroupInviteSend,
+                                                                      ConnectionStringDictionary.SmartassGroupDBConnectionString,
+                                                                      inputParams,
+                                                                      outputParams);
+
+                StoredProcedureResponseDTO response = new StoredProcedureResponseDTO();
+                response = storedProcedure.ExecuteNonQuery();
+
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = response.IsSuccessful,
+                    ResponseText = response.ResponseText,
+                };
+
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.InvitationSendingError,
+                };
+
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
         #endregion
     }
 }

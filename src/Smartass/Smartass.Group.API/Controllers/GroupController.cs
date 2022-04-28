@@ -117,6 +117,35 @@ namespace Smartass.Group.API.Controllers
 
         }
 
+        [HttpPost]
+        [Route("SendGroupInvite")]
+        public IActionResult SendGroupInvite(GroupInvitationDTO groupInvitationDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupLogic.SendGroupInvite(groupInvitationDTO);
+
+                switch (result.ResponseCode)
+                {
+                    case (int)HttpStatusCode.OK:
+                        return Ok(result);
+                    case (int)HttpStatusCode.BadRequest:
+                        return BadRequest(result);
+                    default:
+                        return StatusCode((int)HttpStatusCode.InternalServerError, result);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO();
+                return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                //TO-DO: Implement Errorlog
+            }
+        }
+
         #endregion
     }
 }

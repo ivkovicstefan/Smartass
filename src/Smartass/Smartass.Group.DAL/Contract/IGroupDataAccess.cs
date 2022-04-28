@@ -8,5 +8,6 @@ namespace Smartass.Group.DAL.Contract
         ResponseDTO CreateGroup(GroupCreationDTO groupCreationDTO);
         ResponseDTO GetGroupListByUser(int userId);
         ResponseDTO SearchGroupListByUser(string searchText, int userId);
+        ResponseDTO SendGroupInvite(GroupInvitationDTO groupInvitationDTO);
     }
 }
