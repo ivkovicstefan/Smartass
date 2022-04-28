@@ -6,4 +6,8 @@
     <RootNamespace>Smartass.Core.Utility</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Smartass.Core.Model\Smartass.Core.Model.csproj" />
+  </ItemGroup>
+
 </Project>

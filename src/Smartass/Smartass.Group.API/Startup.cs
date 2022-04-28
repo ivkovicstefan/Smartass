@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Smartass.Core.Model.Dictionary;
 using Smartass.Group.BLL;
 using Smartass.Group.BLL.Contract;
 using Smartass.Group.DAL;
@@ -23,6 +24,8 @@ namespace Smartass.Group.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            ConnectionStringDictionary.SmartassGroupDBConnectionString = Configuration.GetConnectionString("Smartass.Group.DB");
 
             #region BLL Dependency Injection Registration
             services.AddScoped<IGroupLogic, GroupLogic>();

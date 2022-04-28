@@ -91,4 +91,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ImageFile" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="7586ec1b-97f7-4fa8-908a-de314371e135" ChangeDateTime="04/27/2022 14:53:40">
+    <Property Name="ElementName" Value="[GRP].[Group].[ProfileImageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[GRP].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProfileImage" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a21747c9-f902-403d-87d8-d10d8f88216b" ChangeDateTime="04/28/2022 14:00:07">
+    <Property Name="ElementName" Value="[USR].[User].[ProfileImageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[USR].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProfileImage" />
+  </Operation>
 </Operations>
