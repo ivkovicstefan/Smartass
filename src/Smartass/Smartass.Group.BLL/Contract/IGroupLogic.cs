@@ -12,5 +12,8 @@ namespace Smartass.Group.BLL.Contract
         ResponseDTO SearchGroupListByUser(string searchText, int userId);
 
         ResponseDTO SendGroupInvite(GroupInvitationDTO groupInvitationDTO);
+
+        ResponseDTO GetGroupInviteListByUser(int userId);
+
     }
 }

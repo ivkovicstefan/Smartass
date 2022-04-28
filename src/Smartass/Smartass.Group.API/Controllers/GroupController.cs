@@ -131,8 +131,6 @@ namespace Smartass.Group.API.Controllers
                 {
                     case (int)HttpStatusCode.OK:
                         return Ok(result);
-                    case (int)HttpStatusCode.BadRequest:
-                        return BadRequest(result);
                     default:
                         return StatusCode((int)HttpStatusCode.InternalServerError, result);
 
@@ -144,6 +142,33 @@ namespace Smartass.Group.API.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, result);
                 //TO-DO: Implement Errorlog
             }
+        }
+
+        [HttpGet]
+        [Route("GetGroupInviteListByUser/{userId:int}")]
+        public IActionResult GetGroupInviteListByUser(int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupLogic.GetGroupInviteListByUser(userId);
+
+                switch (result.ResponseCode)
+                {
+                    case (int)HttpStatusCode.OK:
+                        return Ok(result);
+                    default:
+                        return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO();
+                return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                //TO-DO: Implement Errorlog
+            }
+
         }
 
         #endregion

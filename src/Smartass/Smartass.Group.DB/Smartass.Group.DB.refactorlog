@@ -98,4 +98,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ProfileImage" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="a21747c9-f902-403d-87d8-d10d8f88216b" ChangeDateTime="04/28/2022 14:00:07">
+    <Property Name="ElementName" Value="[USR].[User].[ProfileImageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[USR].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProfileImage" />
+  </Operation>
 </Operations>

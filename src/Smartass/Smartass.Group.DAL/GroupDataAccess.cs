@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Smartass.Core.Model.Dictionary;
 using System.Linq;
+using Smartass.Core.Model.DTO.User;
 
 namespace Smartass.Group.DAL
 {
@@ -221,6 +222,70 @@ namespace Smartass.Group.DAL
                 {
                     IsSuccessful = false,
                     ResponseText = MessageDictionary.InvitationSendingError,
+                };
+
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
+        public ResponseDTO GetGroupInviteListByUser(int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                List<SqlParameter> inputParams = new List<SqlParameter>()
+                {
+                    new SqlParameter() { ParameterName = "@UserId", SqlDbType = SqlDbType.Int, Value = userId }
+                };
+
+                List<SqlParameter> outputParams = new List<SqlParameter>()
+                {
+                    new SqlParameter() { ParameterName = "@IsSuccessful", SqlDbType = SqlDbType.Bit }
+                };
+
+                StoredProcedure storedProcedure = new StoredProcedure(StoredProcedureDictionary.UspGroupInviteListByUserGet,
+                                                                      ConnectionStringDictionary.SmartassGroupDBConnectionString,
+                                                                      inputParams,
+                                                                      outputParams);
+
+                StoredProcedureResponseDTO response = new StoredProcedureResponseDTO();
+
+                response = storedProcedure.ExecuteReader();
+
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = response.IsSuccessful,
+                    Object = response.DataTables[0].AsEnumerable().Select(row => new GroupInvitationListItemDTO()
+                    {
+                        Group = new GroupListItemDTO()
+                        {
+                            GroupId = row.Field<int>("GroupId"),
+                            GroupName = row.Field<string>("GroupName"),
+                            Image = (row.Field<Byte[]>("GroupImage") != null) ? Convert.ToBase64String(row.Field<Byte[]>("GroupImage")) : String.Empty,
+                        },
+
+                        SentFromUser = new UserListItemDTO()
+                        {
+                            UserId = row.Field<int>("UserId"),
+                            FirstName = row.Field<string>("FirstName"),
+                            LastName = row.Field<string>("LastName"),
+                            ProfileImage = (row.Field<Byte[]>("ProfileImage") != null) ? Convert.ToBase64String(row.Field<Byte[]>("ProfileImage")) : String.Empty
+                        },
+
+                        CreatedDateUTC = row.Field<DateTime>("CreatedDateUTC")
+                    }).ToList()
+                };
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupListGetError
                 };
 
                 //TO-DO: Implement Errorlog

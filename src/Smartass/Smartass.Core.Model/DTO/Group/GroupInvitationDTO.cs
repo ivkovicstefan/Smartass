@@ -9,6 +9,5 @@ namespace Smartass.Core.Model.DTO.Group
         public int GroupIdFrom { get; set; }
         public int UserIdFrom { get; set; }
         public int UserIdTo { get; set; }
-        public DateTime CreatedDateUTC { get; set; }
     }
 }

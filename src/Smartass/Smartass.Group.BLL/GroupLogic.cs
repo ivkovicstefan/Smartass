@@ -143,11 +143,6 @@ namespace Smartass.Group.BLL
                 {
                     result.ResponseCode = (int)HttpStatusCode.OK;
                 }
-                else
-                {
-                    result.ResponseCode = (int)HttpStatusCode.BadRequest;
-                    result.ResponseText = String.Empty;
-                }
 
             }
             catch (Exception ex)
@@ -158,6 +153,35 @@ namespace Smartass.Group.BLL
                     ResponseText = MessageDictionary.GroupCreationError
                 };
 
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
+        public ResponseDTO GetGroupInviteListByUser(int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupDataAcess.GetGroupInviteListByUser(userId);
+
+                if (result.IsSuccessful)
+                {
+                    result.ResponseCode = (int)HttpStatusCode.OK;
+                    result.ResponseText = String.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupListGetError,
+                    ResponseCode = (int)HttpStatusCode.InternalServerError
+                };
                 //TO-DO: Implement Errorlog
                 throw;
             }
