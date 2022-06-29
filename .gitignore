@@ -20,3 +20,5 @@
 /sh.exe.stackdump
 /src/Smartass/.vs/Smartass
 /src/Smartass/Smartass.Core.Model/Smartass.Core.Model.csproj.user
+/src/Smartass/Smartass.Group.BLL/Smartass.Group.BLL.csproj.user
+/src/Smartass/Smartass.Group.DAL/Smartass.Group.DAL.csproj.user

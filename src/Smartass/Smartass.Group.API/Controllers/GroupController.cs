@@ -144,6 +144,33 @@ namespace Smartass.Group.API.Controllers
             }
         }
 
+        [HttpPatch]
+        [Route("RespondGroupInvite")]
+        public IActionResult RespondGroupInvite(GroupInvitationRespondDTO groupInvitationRespondDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupLogic.RespondGroupInvite(groupInvitationRespondDTO);
+
+                switch (result.ResponseCode)
+                {
+                    case (int)HttpStatusCode.OK:
+                        return Ok(result);
+                    default:
+                        return StatusCode((int)HttpStatusCode.InternalServerError, result);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO();
+                return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                //TO-DO: Implement Errorlog
+            }
+        }
+
         [HttpGet]
         [Route("GetGroupInviteListByUser/{userId:int}")]
         public IActionResult GetGroupInviteListByUser(int userId)
@@ -153,6 +180,60 @@ namespace Smartass.Group.API.Controllers
             try
             {
                 result = _groupLogic.GetGroupInviteListByUser(userId);
+
+                switch (result.ResponseCode)
+                {
+                    case (int)HttpStatusCode.OK:
+                        return Ok(result);
+                    default:
+                        return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO();
+                return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                //TO-DO: Implement Errorlog
+            }
+
+        }
+
+        [HttpPost]
+        [Route("SendGroupRequest")]
+        public IActionResult SendGroupRequest(GroupRequestDTO groupRequestDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupLogic.SendGroupRequest(groupRequestDTO);
+
+                switch (result.ResponseCode)
+                {
+                    case (int)HttpStatusCode.OK:
+                        return Ok(result);
+                    default:
+                        return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO();
+                return StatusCode((int)HttpStatusCode.InternalServerError, result);
+                //TO-DO: Implement Errorlog
+            }
+
+        }
+
+        [HttpGet]
+        [Route("GetGroupRequestListByGroupAdmin/{groupId:int}/{userId:int}")]
+        public IActionResult GetGroupRequestListByGroupAdmin(int groupId, int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupLogic.GetGroupRequestListByGroupAdmin(groupId, userId);
 
                 switch (result.ResponseCode)
                 {

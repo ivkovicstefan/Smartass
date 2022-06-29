@@ -43,7 +43,7 @@ namespace Smartass.Core.Model.Dictionary
         /// <summary>
         /// 
         /// </summary>
-        public const string UspGroupRequestListByUserGet = "[GRP].[USP_GroupRequestListByUser_Get]";
+        public const string UspGroupRequestListByGroupAdminGet = "[GRP].[USP_GroupRequestListByGroupAdmin_Get]";
         /// <summary>
         /// 
         /// </summary>

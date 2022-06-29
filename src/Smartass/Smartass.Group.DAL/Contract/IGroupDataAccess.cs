@@ -9,8 +9,9 @@ namespace Smartass.Group.DAL.Contract
         ResponseDTO GetGroupListByUser(int userId);
         ResponseDTO SearchGroupListByUser(string searchText, int userId);
         ResponseDTO SendGroupInvite(GroupInvitationDTO groupInvitationDTO);
+        ResponseDTO RespondGroupInvite(GroupInvitationRespondDTO groupInvitationRespondDTO);
         ResponseDTO GetGroupInviteListByUser(int userId);
-
-
+        ResponseDTO SendGroupRequest(GroupRequestDTO groupRequestDTO);
+        ResponseDTO GetGroupRequestListByGroupAdmin(int groupId, int userId);
     }
 }

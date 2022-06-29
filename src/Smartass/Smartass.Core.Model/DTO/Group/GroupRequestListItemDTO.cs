@@ -5,11 +5,10 @@ using System.Text;
 
 namespace Smartass.Core.Model.DTO.Group
 {
-    public class GroupInvitationListItemDTO
+    public class GroupRequestListItemDTO
     {
-        public int GroupInviteId { get; set; }
-        public GroupListItemDTO Group { get; set; }
-        public UserListItemDTO SentFromUser { get; set; }
+        public int GroupRequestId { get; set; }
+        public UserListItemDTO User { get; set; }
         public DateTime CreatedDateUTC { get; set; }
     }
 }

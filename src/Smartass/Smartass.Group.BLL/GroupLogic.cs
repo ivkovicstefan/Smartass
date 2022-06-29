@@ -189,6 +189,95 @@ namespace Smartass.Group.BLL
             return result;
         }
 
+        public ResponseDTO SendGroupRequest(GroupRequestDTO groupRequestDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupDataAcess.SendGroupRequest(groupRequestDTO);
+
+                if (result.IsSuccessful)
+                {
+                    result.ResponseCode = (int)HttpStatusCode.OK;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupCreationError
+                };
+
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
+        public ResponseDTO RespondGroupInvite(GroupInvitationRespondDTO groupInvitationRespondDTO)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupDataAcess.RespondGroupInvite(groupInvitationRespondDTO);
+
+                if (result.IsSuccessful)
+                {
+                    result.ResponseCode = (int)HttpStatusCode.OK;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupCreationError
+                };
+
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+        }
+
+        public ResponseDTO GetGroupRequestListByGroupAdmin(int groupId, int userId)
+        {
+            ResponseDTO result;
+
+            try
+            {
+                result = _groupDataAcess.GetGroupRequestListByGroupAdmin(groupId, userId);
+
+                if (result.IsSuccessful)
+                {
+                    result.ResponseCode = (int)HttpStatusCode.OK;
+                    result.ResponseText = String.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ResponseDTO()
+                {
+                    IsSuccessful = false,
+                    ResponseText = MessageDictionary.GroupListGetError,
+                    ResponseCode = (int)HttpStatusCode.InternalServerError
+                };
+
+                //TO-DO: Implement Errorlog
+                throw;
+            }
+
+            return result;
+
+        }
+
         #endregion
     }
 }

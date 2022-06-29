@@ -2,8 +2,8 @@
 	===================================================================================================================
 	Stored procedure info
 	-------------------------------------------------------------------------------------------------------------------
-	Created On: 28.04.2022.
-	Purpose:	Sends a group invitaion to the user
+	Created On: 28.06.2022.
+	Purpose:	Sends a group request from user to the group
 	Module:		Group/Group
 	===================================================================================================================
 	Test SQL
@@ -11,11 +11,10 @@
 	DECLARE @Result BIT;
 	DECLARE @Response VARCHAR(100);
 
-    EXEC [GRP].[USP_GroupInvite_Send] @GroupIdFrom = 1,
-                                      @UserIdFrom  =3,
-                                      @UserIdTo = 10,
-                                      @IsSuccessful = @Result OUTPUT,
-                                      @ResponseText = @Response OUTPUT
+    EXEC [GRP].[USP_GroupRequest_Send] @UserIdFrom = 1,
+                                       @GroupIdTo  = 3,
+                                       @IsSuccessful = @Result OUTPUT,
+                                       @ResponseText = @Response OUTPUT
     
     SELECT @Result, @Response;
 	===================================================================================================================
@@ -23,14 +22,13 @@
 	-------------------------------------------------------------------------------------------------------------------
 	Date			Version			Developer				Change Description
 	-------------------------------------------------------------------------------------------------------------------
-	28.04.2022.		1.0				Stefan Ivkovic			Initial version
+	28.06.2022.		1.0				Stefan Ivkovic			Initial version
 	===================================================================================================================
 */
-CREATE PROCEDURE [GRP].[USP_GroupInvite_Send]
+CREATE PROCEDURE [GRP].[USP_GroupRequest_Send]
 (
-    @GroupIdFrom        INT,
 	@UserIdFrom         INT,
-    @UserIdTo           INT,
+    @GroupIdTo          INT,
 	@IsSuccessful		BIT				OUTPUT,
     @ResponseText       VARCHAR(100)    OUTPUT
 )
@@ -41,33 +39,32 @@ BEGIN
 			-- Begin Execution Logging --
 			-- TO-DO: Implement Execution Logging
 			-- End Logging --
-
-            IF EXISTS (SELECT * FROM [GRP].[GroupInvite] WHERE FromGroupId = @GroupIdFrom AND ToUserId = @UserIdTo)
-                BEGIN
-                    RAISERROR('Invitation already sent.', 18, 3)
-                END
-
-            IF EXISTS (SELECT * FROM [GRP].[UserGroup] WHERE UserId = @UserIdTo AND GroupId = @GroupIdFrom AND IsActive = 1 AND IsDeleted = 0)
-                BEGIN
-                    RAISERROR('User is already a group member.', 18,3)
-                END
-
-            IF EXISTS (SELECT * FROM [GRP].[GroupRequest] WHERE UserId = @UserIdTo AND GroupId = @GroupIdFrom)
-                BEGIN
-                    RAISERROR('Can not send an invitation. Group request already exists.', 18, 3)
-                END
             
-            INSERT INTO [GRP].[GroupInvite]
+            IF EXISTS (SELECT * FROM [GRP].[UserGroup] WHERE UserId = @UserIdFrom AND GroupId = @GroupIdTo AND IsActive = 1 AND IsDeleted = 0)
+                 BEGIN
+                    RAISERROR('User is already a member of the group', 18, 3)
+                 END
+
+            IF EXISTS (SELECT * FROM [GRP].[GroupRequest] WHERE UserId = @UserIdFrom AND GroupId = @GroupIdTo)
+                 BEGIN
+                    RAISERROR('Group request has already been sent', 18, 3)
+                 END
+            
+            IF EXISTS (SELECT * FROM [GRP].[GroupInvite] WHERE ToUserId = @UserIdFrom AND FromGroupId = @GroupIdTo)
+                 BEGIN
+                    RAISERROR('Can not send a request. Group invitation already exists.', 18, 3)
+                 END
+
+            INSERT INTO [GRP].[GroupRequest]
             (
-                FromUserId,
-                ToUserId,
-                FromGroupId,
+                UserId,
+                GroupId,
                 CreatedDateUTC
             )
-            VALUES (@UserIdFrom, @UserIdTo, @GroupIdFrom, GETUTCDATE());
+            VALUES (@UserIdFrom, @GroupIdTo, GETUTCDATE());
 
             SET @IsSuccessful = 1
-            SET @ResponseText = 'User('+CAST(@UserIdFrom AS VARCHAR)+') successfully sent a group invitation to user('+CAST(@UserIdTo AS VARCHAR)+') to join group('+CAST(@GroupIdFrom AS VARCHAR)+').' 
+            SET @ResponseText = 'User('+CAST(@UserIdFrom AS VARCHAR)+') successfully sent a request to join the group('+CAST(@GroupIdTo AS VARCHAR)+').' 
 			
             -- Begin Execution Logging --
 			-- TO-DO: Implement Execution Logging
