@@ -63,7 +63,7 @@ BEGIN
 		DECLARE @ErrorSeverity INT;
 		DECLARE @ErrorState INT;
 
-		SELECT @ErrorMessage = ERROR_MESSAGE() + 'Line: ' + CAST(ERROR_LINE() AS NVARCHAR(5)),
+		SELECT @ErrorMessage = ERROR_MESSAGE(),
 			   @ErrorSeverity = ERROR_SEVERITY(),
 			   @ErrorState = ERROR_STATE();
 

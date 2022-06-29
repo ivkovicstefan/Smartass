@@ -2,16 +2,17 @@
 	===================================================================================================================
 	Stored procedure info
 	-------------------------------------------------------------------------------------------------------------------
-	Created On: 28.04.2022.
-	Purpose:	Gets list of all group invites.
+	Created On: 29.06.2022.
+	Purpose:	Gets list of all group requests for the user.
 	Module:		Group/Group
 	===================================================================================================================
 	Test SQL
 	-------------------------------------------------------------------------------------------------------------------
 	DECLARE @Result BIT;
 	
-    EXEC [GRP].[USP_GroupInviteListByUser_Get] @UserId=5,
-                                               @IsSuccessful=@Result OUTPUT
+    EXEC [GRP].[USP_GroupRequestListByGroupAdmin_Get] @UserId=5,
+                                                      @GroupId=3,
+                                                      @IsSuccessful=@Result OUTPUT
     
     SELECT @Result;
 	===================================================================================================================
@@ -19,12 +20,13 @@
 	-------------------------------------------------------------------------------------------------------------------
 	Date			Version			Developer				Change Description
 	-------------------------------------------------------------------------------------------------------------------
-	28.04.2022.		1.0				Stefan Ivkovic			Initial version
+	29.06.2022.		1.0				Stefan Ivkovic			Initial version
 	===================================================================================================================
 */
-CREATE PROCEDURE [GRP].[USP_GroupInviteListByUser_Get]
+CREATE PROCEDURE [GRP].[USP_GroupRequestListByGroupAdmin_Get]
 (
 	@UserId             INT,
+    @GroupId            INT,
 	@IsSuccessful		BIT				OUTPUT
 )
 AS
@@ -34,25 +36,24 @@ BEGIN
 			-- TO-DO: Implement Execution Logging
 			-- End Logging --
 
+            IF (SELECT IsAdmin FROM [GRP].[UserGroup] WHERE UserId = @UserId) = 0
+                BEGIN
+                    RAISERROR('Not Authorized', 18, 3)
+                END
+
             -- Begin Main Query --
             SELECT
-                gi.GroupInviteId,
-                g.GroupId,
-                g.GroupName,
-                g.ProfileImage AS 'GroupImage',
+                gr.GroupRequestId,
                 u.UserId,
                 u.FirstName,
                 u.LastName,
                 u.ProfileImage,
-                gi.CreatedDateUTC
+                gr.CreatedDateUTC
             FROM
-                [GRP].[Group] g
-                JOIN [GRP].[GroupInvite] gi ON g.GroupId = gi.FromGroupId
-                JOIN [USR].[User] u ON gi.FromUserId = u.UserId
+                [GRP].[GroupRequest] gr
+                JOIN [USR].[User] u ON gr.UserId = u.UserId
             WHERE
-                gi.ToUserId = @UserId
-                AND g.IsActive = 1
-                AND g.IsDeleted = 0
+                gr.GroupId = @GroupId
             -- End Main Query --
 
             SET @IsSuccessful = 1
